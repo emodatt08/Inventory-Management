@@ -1,0 +1,51 @@
+<!-- Header-->
+		<div th:replace="header"></div>
+<!-- /Header -->
+
+<div class="container">
+<h1>Add Employee</h1>
+
+		<form action="#" th:action="@{/addEmployeeDetails}" th:object="${employee}" method="POST">
+		
+				
+						<div class="form-group">
+						  	<label class="col-form-label" for="employeeName">Full Name:</label>
+						   	<input type="text" class="form-control form-control-sm form-control form-control-sm-sm" id="employeeName" th:field="*{EmployeeName}"/>
+						</div>
+						
+						<div class="form-group">
+						  	<label class="col-form-label" for="empEmail"> Email:</label>
+						   	<input type="text" class="form-control form-control-sm" id="empEmail" th:field="*{EmpEmail}"/>
+						</div>
+						
+						<div class="form-group">
+						  	<label class="col-form-label" for="empNo"> Mobile No:</label>
+						   	<input type="text" class="form-control form-control-sm" id="empNo" th:field="*{EmpNo}"/>
+						</div>
+						
+						<div class="form-group">
+						  	<label class="col-form-label" for="emphireDate">Hire Date:</label>
+						   	<input class="form-control form-control-sm" id="datepicker"  th:field="*{EmphireDate}" width="276" />
+						</div>
+						
+						<div class="form-group">
+						  	<label class="col-form-label" for="salary">Salary:</label>
+						   	<input class="form-control form-control-sm" type="text" id="salary" th:field="*{Salary}"/>
+						</div>
+						
+
+		<input type="submit" value="Add Employee" class="btn btn-primary"/>
+		
+		</form>
+	<script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+            format: 'dd-mm-yy'
+        });
+    </script>
+</div>
+
+<!-- Footer-->
+		<div th:replace="footer"></div>
+<!-- /Footer -->	
+		
